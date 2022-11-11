@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:id="@+id/content_select_criteria_layout"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:id="@+id/select_cuisine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/select_protein"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:id="@+id/select_cuisine_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cuisine"
+
+            />
+        <Spinner
+            android:id="@+id/cuisine_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/cuisine_selected_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select your cuisine"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/select_protein"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+
+        app:layout_constraintTop_toBottomOf="@+id/select_cuisine"
+        app:layout_constraintBottom_toBottomOf="@+id/selected_items_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:id="@+id/select_proteint_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Protein"
+
+            />
+        <Spinner
+            android:id="@+id/protein_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_marginTop="20dp"
+            />
+        <TextView
+            android:id="@+id/protein_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select your protein"
+            android:layout_marginTop="10dp"
+            />
+            -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selected_items_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+
+        app:layout_constraintTop_toBottomOf="@+id/select_protein"
+        app:layout_constraintBottom_toTopOf="@+id/button_layout_search_recipes_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selected Items"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/selected_cuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />
+            <TextView
+                android:id="@+id/selected_protein"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/button_layout_search_recipes_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintTop_toBottomOf="@+id/selected_items_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:gravity="right"
+        >
+        <Button
+            android:id="@+id/to_search_recipes_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find Recipes"
+
+            android:layout_gravity="center"
+
+            android:layout_marginRight="20dp"
+            />
+    </LinearLayout>
+
+
+
+
+    <!--
+    <fragment
+        android:id="@+id/nav_host_fragment_content_select_criteria"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph2" />
+        -->
+</androidx.constraintlayout.widget.ConstraintLayout>

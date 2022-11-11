@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cuisine_type_description">
+        <item>--</item>
+        <item>American cuisine is diverse and a fusion of different cuisines. It is widely known for cheeseburgers, hot dogs, and bbq.</item>
+        <item>Japanese cuisine is based on rice, noodles, soups, vegetables and seafood.</item>
+        <item>Chinese cuisine staples rice and noodles with a side of protein.</item>
+        <item>Korean cuisine staples rice, noodles, vegetables, and a protein. Many of the dishes are mixed with spices and served with side  dishes.</item>
+        <item>Italian cuisine is rich in pasta, fish, fruits, and vegetables.</item>
+    </string-array>
+</resources>
