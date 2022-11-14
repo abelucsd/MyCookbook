@@ -4,8 +4,6 @@ import android.text.SpannableString
 import com.google.gson.annotations.SerializedName
 
 data class RecipePost(
-    @SerializedName("name")
-    val key: String,
     @SerializedName("id")
     val id: Int,
     @SerializedName("title")

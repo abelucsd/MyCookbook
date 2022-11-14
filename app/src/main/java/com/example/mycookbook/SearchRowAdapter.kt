@@ -18,7 +18,7 @@ class SearchRowAdapter(private val viewModel: SearchViewModel)
             }
 
         override fun areItemsTheSame(oldItem: RecipePost, newItem: RecipePost): Boolean {
-                return oldItem.key == newItem.key
+                return oldItem.id == newItem.id
         }
     }
     private var recipes = mutableListOf<RecipePost>()
@@ -35,6 +35,14 @@ class SearchRowAdapter(private val viewModel: SearchViewModel)
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
+        val item = recipes[holder.adapterPosition]
+        val rowBinding = holder.binding
+        rowBinding.recipeTitle.text = item.title
+        // Glide Image
+
+        // On Click to view one recipe page.
+
+
 
     }
 

@@ -12,18 +12,26 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 import java.lang.reflect.Type
 
 interface RecipeApi {
 
-    @GET("/recipes/complexSearch?number=50&apiKey=43f106e3bd704dbfb8a7d9aba2a3ae8d&query={cuisine}")
-    suspend fun getRecipeList(@Path("cuisine") cuisine: String): ListingResponse
+    @GET("/recipes/complexSearch?number=10&apiKey=43f106e3bd704dbfb8a7d9aba2a3ae8d")
+    suspend fun getRecipeList(@Query("cuisine") cuisine: String ): ListingResponse
 
-    class ListingResponse(val data: ListingData)
+    class ListingResponse(val results: List<RecipePost>)
+
+
+    //data class ListingData(val data: RecipePost)
+
+
 
     class ListingData(
         val children: List<RecipeChildrenResponse>
     )
+
+
 
     data class RecipeChildrenResponse(val data: RecipePost)
 
@@ -60,6 +68,7 @@ interface RecipeApi {
                 .baseUrl(httpUrl)
                 .client(client)
                 .addConverterFactory(buildGsonConverterFactory())
+                //.addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(RecipeApi::class.java)
         }

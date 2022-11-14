@@ -11,18 +11,31 @@ class RecipePostRepository(private val recipeApi: RecipeApi) {
     ).create()
 
     private fun unpackPosts(response: RecipeApi.ListingResponse): List<RecipePost> {
+        Log.d("API workflow", "unpackPosts()")
+
         var listing = mutableListOf<RecipePost>()
-        for (item in response.data.children) {
-            listing.add(item.data)
+        // Log.d("API workflow", "unpackPosts() ${response.results}")
+        for (item in response.results) {
+            listing.add(item)
         }
+        /*
+        for (item in response.results) {
+            listing.add(item.data)
+        }*
+
+         */
+        Log.d("API workflow", "unpackPosts() listing")
         return listing
     }
 
     suspend fun getRecipes(cuisine: String, protein: String): List<RecipePost> {
         // if (RecipeSearchActivity.globalDebug) {
         Log.d("API workflow", "getRecipes() ${cuisine} ${protein}")
-        var listing = unpackPosts(recipeApi.getRecipeList(cuisine))
+        val apiReturn = recipeApi.getRecipeList(cuisine)
+        var listing = unpackPosts(apiReturn)
 
-         return listing
+        Log.d("API workflow", "getRecipes() ${listing}")
+
+        return listing
     }
 }
