@@ -65,7 +65,7 @@
                     android:id="@+id/recipe_card_favorite_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background"
+                    android:src="@drawable/ic_baseline_favorite_border_24"
                     />
             </LinearLayout>
         </LinearLayout>

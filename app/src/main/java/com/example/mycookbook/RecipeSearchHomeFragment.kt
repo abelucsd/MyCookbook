@@ -40,9 +40,10 @@ class RecipeSearchHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val activity = requireActivity() as RecipeSearchActivity
 
         val rv = binding.searchRecyclerView
-        val adapter = SearchRowAdapter(viewModel)
+        val adapter = SearchRowAdapter(viewModel, activity.recipesDb)
         rv.adapter = adapter
         rv.layoutManager = LinearLayoutManager(activity)
 

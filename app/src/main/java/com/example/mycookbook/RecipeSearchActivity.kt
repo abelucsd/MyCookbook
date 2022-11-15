@@ -1,6 +1,8 @@
 package com.example.mycookbook
 
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +15,7 @@ import com.example.mycookbook.databinding.ActivityRecipeSearchBinding
 import androidx.fragment.app.FragmentTransaction
 import com.example.mycookbook.RecipeSearchHomeFragment
 import androidx.fragment.app.commit
+import java.io.IOException
 
 class RecipeSearchActivity : AppCompatActivity() {
 
@@ -25,6 +28,8 @@ class RecipeSearchActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityRecipeSearchBinding
+    lateinit var recipesDb: SQLiteDatabase
+    private lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +38,14 @@ class RecipeSearchActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+
+        dbHelper = DatabaseHelper(this)
+        try {
+            dbHelper.createDatabase()
+        } catch (e: IOException) {
+            Log.e("DB", "Fail to create database", e)
+        }
+        recipesDb = dbHelper.readableDatabase
 
         addHomeFragment()
 
