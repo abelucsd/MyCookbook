@@ -50,7 +50,7 @@ class SearchRowAdapter(private val viewModel: SearchViewModel, private val db: S
                     var limitstr = "50"
 
 
-                    // TODO: Perhaps change boolean to int 0 and 1 
+                    // TODO: Perhaps change boolean to int 0 and 1
                     db.beginTransaction()
                     // what is a Cursor? Isn't it an iterator. don't need it. just need the list
                     val favorited_query = db.query(

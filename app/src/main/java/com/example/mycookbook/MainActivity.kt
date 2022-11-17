@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
             navigateToSearchCriteria()
         }
 
+        contentMainBinding.toMyRecipesActivity.setOnClickListener {
+            navigateToMyRecipes()
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -83,6 +87,15 @@ class MainActivity : AppCompatActivity() {
             startActivity(getIntent)
         } catch (e: ActivityNotFoundException) {
             Log.d(javaClass.simpleName, "navigateToSearchCriteria() - ActivityNotFound - ${e}")
+        }
+    }
+
+    private fun navigateToMyRecipes() {
+        val getIntent = Intent(this, MyRecipesActivity::class.java)
+        try {
+            startActivity(getIntent)
+        } catch (e: ActivityNotFoundException) {
+            Log.d(javaClass.simpleName, "navigateToMyRecipes() - ActivityNotFound - ${e}")
         }
     }
 }

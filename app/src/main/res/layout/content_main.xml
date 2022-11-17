@@ -7,11 +7,22 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <Button
-        android:id="@+id/to_select_criteria_activity"
+        android:id="@+id/to_my_recipes_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select Criteria"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/to_select_criteria_activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/to_select_criteria_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Criteria"
+        app:layout_constraintTop_toBottomOf="@id/to_my_recipes_activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

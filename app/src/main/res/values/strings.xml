@@ -11,4 +11,5 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_select_criteria">SelectCriteriaActivity</string>
     <string name="title_activity_recipe_search">RecipeSearchActivity</string>
+    <string name="title_activity_my_recipes">MyRecipesActivity</string>
 </resources>
