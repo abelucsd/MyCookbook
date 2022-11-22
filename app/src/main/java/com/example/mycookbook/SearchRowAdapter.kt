@@ -121,8 +121,6 @@ class SearchRowAdapter(private val viewModel: SearchViewModel, private val db: S
 
         // On Click to view one recipe page.
 
-
-
     }
 
     fun addRecipes(items: List<RecipePost>) {
