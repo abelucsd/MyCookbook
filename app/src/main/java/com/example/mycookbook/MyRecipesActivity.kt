@@ -3,6 +3,7 @@ package com.example.mycookbook
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
@@ -24,11 +25,11 @@ class MyRecipesActivity : AppCompatActivity() {
         private const val homeFragTag = "homeFragTag"
         private const val recipeOneTag = "recipeOneTag"
     }
+    private val viewModel: SearchViewModel by viewModels()
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMyRecipesBinding
     // Maybe does this need to be in MainActivity? No.
-    lateinit var recipesDb: SQLiteDatabase
     private lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,9 @@ class MyRecipesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        viewModel.initDBHelper(ViewModelDbHelper(this))
 
+        /*
         dbHelper = DatabaseHelper(this)
         try {
             dbHelper.createDatabase()
@@ -46,6 +49,8 @@ class MyRecipesActivity : AppCompatActivity() {
             Log.e("DB", "Fail to create database", e)
         }
         recipesDb = dbHelper.readableDatabase
+
+         */
 
         addHomeFragment()
 

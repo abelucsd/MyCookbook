@@ -29,7 +29,7 @@ class RecipeSearchActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityRecipeSearchBinding
     lateinit var recipesDb: SQLiteDatabase
-    private lateinit var dbHelper: DatabaseHelper
+    lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,14 +38,19 @@ class RecipeSearchActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        viewModel.initDBHelper(ViewModelDbHelper(this))
 
+
+        /*
         dbHelper = DatabaseHelper(this)
         try {
             dbHelper.createDatabase()
         } catch (e: IOException) {
             Log.e("DB", "Fail to create database", e)
         }
-        recipesDb = dbHelper.readableDatabase
+        recipesDb = dbHelper.writableDatabase
+
+         */
 
         addHomeFragment()
 

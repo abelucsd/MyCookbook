@@ -7,7 +7,7 @@ data class RecipePost(
     @SerializedName("id")
     val id: Int,
     @SerializedName("title")
-    val title: SpannableString,
+    val title: String,
     @SerializedName("image")
     val imageUrl: String,
     @SerializedName("imageType")
