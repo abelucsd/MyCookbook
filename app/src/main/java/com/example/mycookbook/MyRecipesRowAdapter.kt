@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mycookbook.api.RecipePost
 import com.example.mycookbook.databinding.RowSearchBinding
+import com.example.mycookbook.glide.Glide
 
 // I dont need a view model. I use the database.
 class MyRecipesRowAdapter(private val viewModel: SearchViewModel)
@@ -58,6 +59,7 @@ class MyRecipesRowAdapter(private val viewModel: SearchViewModel)
         val rowBinding = holder.binding
         rowBinding.recipeTitle.text = item.title
         // Glide Image
+        Glide.glideFetch(item.imageUrl, item.imageUrl, rowBinding.recipeCardImage)
 
         // On Click to view one recipe page.
         val ids = viewModel.getFaveRecipes()

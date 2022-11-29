@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
+import com.example.mycookbook.glide.Glide
 import com.example.mycookbook.api.RecipePost
 import com.example.mycookbook.databinding.RowSearchBinding
 
@@ -160,6 +161,7 @@ class SearchRowAdapter(private val viewModel: SearchViewModel)
         val rowBinding = holder.binding
         rowBinding.recipeTitle.text = item.title
         // Glide Image
+        Glide.glideFetch(item.imageUrl, item.imageUrl, rowBinding.recipeCardImage)
 
         // On Click to view one recipe page.
         val ids = viewModel.getFaveRecipes()

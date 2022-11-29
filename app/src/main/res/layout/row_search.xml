@@ -20,6 +20,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/recipe_card_frame_layout"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/black"
             />
 
         <FrameLayout
@@ -66,6 +72,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_favorite_border_24"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginBottom="12dp"
                     />
             </LinearLayout>
         </LinearLayout>
