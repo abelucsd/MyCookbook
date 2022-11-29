@@ -19,6 +19,11 @@ import com.example.mycookbook.databinding.ContentSelectCriteriaBinding
 
 class SelectCriteriaActivity : AppCompatActivity() {
 
+    companion object {
+        const val cuisineKey = "cuisineKey"
+        const val proteinKey = "proteinKey"
+    }
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivitySelectCriteriaBinding
     private lateinit var contentMainBinding: ContentSelectCriteriaBinding
@@ -118,6 +123,8 @@ class SelectCriteriaActivity : AppCompatActivity() {
     private fun navigateToRecipeSearch() {
         // Create an Intent
         val getIntent = Intent(this, RecipeSearchActivity::class.java)
+        getIntent.putExtra(cuisineKey, contentMainBinding.selectedCuisine.text.toString())
+        getIntent.putExtra(proteinKey, contentMainBinding.selectedProtein.text.toString())
         try {
             startActivity(getIntent)
         } catch (e: ActivityNotFoundException) {

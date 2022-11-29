@@ -1,7 +1,9 @@
 package com.example.mycookbook
 
 import android.content.ContentValues
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,6 +48,15 @@ class MyRecipesHomeFragment : Fragment() {
         // add recipes through db
         adapter.addRecipes(viewModel.getFavoriteRecipes())
         // adapter.addRecipes(populateRows(activity.recipesDb))
+
+        // go to webpage
+        viewModel.observeRecipeUrl().observe(viewLifecycleOwner) {
+            if (it != "") {
+                val openURL = Intent(android.content.Intent.ACTION_VIEW)
+                openURL.data = Uri.parse(it)
+                startActivity(openURL)
+            }
+        }
     }
 
     private fun populateRows(db: SQLiteDatabase) : List<RecipePost>  {

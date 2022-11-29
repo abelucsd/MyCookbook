@@ -37,6 +37,20 @@ class RecipeSearchActivity : AppCompatActivity() {
         binding = ActivityRecipeSearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Get bundle
+        val callingBundle = intent.extras
+        val selectedCuisine = callingBundle?.getString(SelectCriteriaActivity.cuisineKey)
+        val selectedProtein = callingBundle?.getString(SelectCriteriaActivity.proteinKey)
+
+        selectedCuisine?.apply {
+            Log.d("bundle", "Cuisine: ${selectedCuisine}")
+            viewModel.setCuisine(selectedCuisine)
+        }
+        selectedProtein?.apply {
+            viewModel.setProtein(selectedProtein)
+        }
+
+
         setSupportActionBar(binding.toolbar)
         viewModel.initDBHelper(ViewModelDbHelper(this))
 

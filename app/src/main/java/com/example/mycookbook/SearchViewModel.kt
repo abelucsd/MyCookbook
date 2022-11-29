@@ -26,6 +26,10 @@ class SearchViewModel : ViewModel() {
         value = "american"
     }
 
+    private val recipeUrl = MutableLiveData<String>().apply {
+        value = ""
+    }
+
     init {
         repoFetch()
     }
@@ -43,9 +47,20 @@ class SearchViewModel : ViewModel() {
         context = viewModelScope.coroutineContext + Dispatchers.IO
             ) {
         // Pass in values
-        Log.d("ViewModel", "netRefresh()")
-        recipes.postValue(repository.getRecipes(cuisine, protein))
+        Log.d("bundle", "netRefresh() ${cuisine}")
+        recipes.postValue(repository.getRecipes(cuisineSearch.value.toString(), proteinSearch.value.toString()))
     }
+
+    fun setCuisine(cuisine: String) {
+        Log.d("bundle", "CuisineSearch: ${cuisine}")
+        cuisineSearch.value = cuisine
+    }
+    fun setProtein(protein: String) {
+        proteinSearch.value = protein
+    }
+
+
+
     fun observeRecipes(): LiveData<List<RecipePost>> {
         return recipes
     }
@@ -77,5 +92,14 @@ class SearchViewModel : ViewModel() {
     }
     fun getFavoriteRecipes(): List<RecipePost> {
         return dbHelp.getFaveRecipes()
+    }
+
+    fun getRecipeInfo(id: String) = viewModelScope.launch (
+        context = viewModelScope.coroutineContext + Dispatchers.IO
+    ) {
+        recipeUrl.postValue(repository.getRecipeInfo(id))
+    }
+    fun observeRecipeUrl(): LiveData<String> {
+        return recipeUrl
     }
 }

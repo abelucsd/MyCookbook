@@ -22,6 +22,11 @@ interface RecipeApi {
 
     class ListingResponse(val results: List<RecipePost>)
 
+    @GET("/recipes/{id}/information?includeNutrition=false&apiKey=43f106e3bd704dbfb8a7d9aba2a3ae8d")
+    suspend fun getRecipeInfo(@Path("id") id: String): ApiRecipeInfo
+
+    class ApiRecipeInfo(val spoonacularSourceUrl: String)
+
 
     //data class ListingData(val data: RecipePost)
 

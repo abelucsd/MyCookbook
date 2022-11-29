@@ -44,6 +44,11 @@ class MyRecipesRowAdapter(private val viewModel: SearchViewModel)
                 }
 
             }
+
+            binding.recipeCardImage.setOnClickListener {
+                val item = recipes[adapterPosition]
+                viewModel.getRecipeInfo(item.id.toString())
+            }
         }
 
     }

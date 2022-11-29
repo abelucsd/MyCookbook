@@ -38,4 +38,11 @@ class RecipePostRepository(private val recipeApi: RecipeApi) {
 
         return listing
     }
+
+    suspend fun getRecipeInfo(id: String): String {
+        val apiReturn = recipeApi.getRecipeInfo(id)
+
+        Log.d("recipeInfo", "ApiReturn: ${apiReturn.spoonacularSourceUrl}")
+        return apiReturn.spoonacularSourceUrl
+    }
 }

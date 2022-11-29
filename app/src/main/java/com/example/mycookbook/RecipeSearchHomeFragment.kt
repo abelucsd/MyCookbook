@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mycookbook.databinding.RecipeSearchHomeFragmentBinding
 import java.io.IOException
+import android.content.Intent
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -49,6 +50,8 @@ class RecipeSearchHomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity() as RecipeSearchActivity
+
+
         // val db = activity.recipesDb
         val rv = binding.searchRecyclerView
         val adapter = SearchRowAdapter(viewModel) //, activity.recipesDb, activity.dbHelper)
