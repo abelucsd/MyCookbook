@@ -47,6 +47,7 @@ class MyRecipesHomeFragment : Fragment() {
 
         // add recipes through db
         adapter.addRecipes(viewModel.getFavoriteRecipes())
+        adapter.notifyDataSetChanged()
         // adapter.addRecipes(populateRows(activity.recipesDb))
 
         // go to webpage

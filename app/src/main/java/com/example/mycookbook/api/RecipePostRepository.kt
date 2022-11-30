@@ -31,7 +31,7 @@ class RecipePostRepository(private val recipeApi: RecipeApi) {
     suspend fun getRecipes(cuisine: String, protein: String): List<RecipePost> {
         // if (RecipeSearchActivity.globalDebug) {
         Log.d("API workflow", "getRecipes() ${cuisine} ${protein}")
-        val apiReturn = recipeApi.getRecipeList(cuisine)
+        val apiReturn = recipeApi.getRecipeList(cuisine, protein)
         var listing = unpackPosts(apiReturn)
 
         Log.d("API workflow", "getRecipes() ${listing}")

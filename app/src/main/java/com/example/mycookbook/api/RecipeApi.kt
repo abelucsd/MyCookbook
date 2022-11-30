@@ -17,8 +17,8 @@ import java.lang.reflect.Type
 
 interface RecipeApi {
 
-    @GET("/recipes/complexSearch?number=10&apiKey=43f106e3bd704dbfb8a7d9aba2a3ae8d")
-    suspend fun getRecipeList(@Query("cuisine") cuisine: String ): ListingResponse
+    @GET("/recipes/complexSearch?number=15&apiKey=43f106e3bd704dbfb8a7d9aba2a3ae8d")
+    suspend fun getRecipeList(@Query("cuisine") cuisine: String, @Query("includeIngredients") protein: String ): ListingResponse
 
     class ListingResponse(val results: List<RecipePost>)
 
