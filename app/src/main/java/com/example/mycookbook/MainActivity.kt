@@ -12,6 +12,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toolbar
 import com.example.mycookbook.databinding.ActivityMainBinding
 import com.example.mycookbook.databinding.ContentMainBinding
 
@@ -32,8 +33,13 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+
+        val actionToolBar = binding.toolbar
+        setSupportActionBar(actionToolBar)
+        actionToolBar.setTitle("My Cookbook")
+
         contentMainBinding = binding.contentMain
+
 
         // Don't need this navController. MainActivity will not have fragments.
         /*

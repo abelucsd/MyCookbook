@@ -10,7 +10,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="My Cookbook"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCookbook"
@@ -18,7 +18,7 @@
         <activity
             android:name=".MyRecipesActivity"
             android:exported="false"
-            android:label="@string/title_activity_my_recipes"
+            android:label="My Recipes"
             android:theme="@style/Theme.MyCookbook.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -27,7 +27,7 @@
         <activity
             android:name=".RecipeSearchActivity"
             android:exported="false"
-            android:label="@string/title_activity_recipe_search"
+            android:label="Search Recipes"
             android:theme="@style/Theme.MyCookbook.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -36,7 +36,7 @@
         <activity
             android:name=".SelectCriteriaActivity"
             android:exported="false"
-            android:label="@string/title_activity_select_criteria"
+            android:label="Select Criteria"
             android:theme="@style/Theme.MyCookbook.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
@@ -45,7 +45,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="My Cookbook"
             android:theme="@style/Theme.MyCookbook.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
