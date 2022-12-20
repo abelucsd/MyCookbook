@@ -6,6 +6,7 @@ I will build an application which fetches content using a recipe API and display
 Interface
 
 ![png](images/mycookbook-recipe.png | width = 100)  
+<img src="images/mycookbook-recipe.png" width="100" height="300"
 
                                  
 ### API
