@@ -100,25 +100,10 @@ class SelectCriteriaActivity : AppCompatActivity() {
             }
         }
 
-        /*
-        val navController = findNavController(R.id.nav_host_fragment_content_select_criteria)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-         */
     }
 
-    /*
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_select_criteria)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
-     */
+
 
     private fun navigateToRecipeSearch() {
         // Create an Intent

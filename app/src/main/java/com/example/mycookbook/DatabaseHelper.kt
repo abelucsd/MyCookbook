@@ -97,26 +97,6 @@ class DatabaseHelper(private val context: Context) :
             return recipePosts
         }
 
-    /*
-    @Throws(IOException::class)
-    private fun copyDatabase() {
-        val input = context.assets.open(DB_NAME)
-        val outFile = context.getDatabasePath(DB_NAME)
-        val output = FileOutputStream(outFile)
-        Log.d(javaClass.simpleName, "Copying DB from assets in: ${input} out: ${outFile.absolutePath}")
-        input.copyTo(output)
-    }
-
-    @Throws(IOException::class)
-    fun createDatabase() {
-        val inFile = context.getDatabasePath(DB_NAME)
-        Log.d(javaClass.simpleName, "DBHelper input: ${inFile.absolutePath} exists: ${inFile.exists()}")
-        if (!inFile.exists()) {
-            copyDatabase()
-        }
-    }
-     */
-
     override fun onOpen(db: SQLiteDatabase) {
         super.onOpen(db)
         db.execSQL("PRAGMA foreign_keys=ON")

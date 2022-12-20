@@ -41,29 +41,10 @@ class MyRecipesActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         viewModel.initDBHelper(ViewModelDbHelper(this))
 
-        /*
-        dbHelper = DatabaseHelper(this)
-        try {
-            dbHelper.createDatabase()
-        } catch (e: IOException) {
-            Log.e("DB", "Fail to create database", e)
-        }
-        recipesDb = dbHelper.readableDatabase
-
-         */
 
         addHomeFragment()
 
-        /*
-        val navController = findNavController(R.id.nav_host_fragment_content_my_recipes)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-         */
     }
 
     // Home Frag
@@ -77,11 +58,4 @@ class MyRecipesActivity : AppCompatActivity() {
         }
     }
 
-    /*
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_my_recipes)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
-     */
 }

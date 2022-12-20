@@ -40,20 +40,6 @@ class MainActivity : AppCompatActivity() {
 
         contentMainBinding = binding.contentMain
 
-
-        // Don't need this navController. MainActivity will not have fragments.
-        /*
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
-         */
-
         // My Code
         contentMainBinding.toSelectCriteriaActivity.setOnClickListener {
             navigateToSearchCriteria()
@@ -80,16 +66,6 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    /*
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
-    }
-     */
-
-    // --
 
     private fun navigateToSearchCriteria() {
         // Create an Intent

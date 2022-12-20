@@ -30,9 +30,7 @@ class MyRecipesRowAdapter(private val viewModel: SearchViewModel)
         init {
             binding.recipeCardFavoriteIcon.setOnClickListener {
                 val item = recipes[adapterPosition]
-                //viewModel.addFaveRecipe(item)
-                //viewModel.setFavoriteRecipe(item)
-                //val fave_recipes = viewModel.getFavoriteRecipes()
+
                 val ids = viewModel.getFaveRecipes()
 
                 if (ids.contains(item.id.toLong())) {

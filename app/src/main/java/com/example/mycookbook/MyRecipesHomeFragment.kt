@@ -48,7 +48,6 @@ class MyRecipesHomeFragment : Fragment() {
         // add recipes through db
         adapter.addRecipes(viewModel.getFavoriteRecipes())
         adapter.notifyDataSetChanged()
-        // adapter.addRecipes(populateRows(activity.recipesDb))
 
         // go to webpage
         viewModel.observeRecipeUrl().observe(viewLifecycleOwner) {
@@ -112,32 +111,6 @@ class MyRecipesHomeFragment : Fragment() {
             favorited_query.close()
         }
 
-        /*
-        if (favorited_ids.contains(item.id)) {
-            /*
-            UPDATE my_recipes SET is_favorited="False" WHERE api_id = item.id
-            db.update(table, "is_favorited" + " VALUES 'False' ", " WHERE api_id = item.id", null);
-
-            Make ContentValues object:
-            ContentValues cv = new ContentValues()
-            cv.put("is_favorited", "False");
-            db.update(table, cv, "p_id = ?", item.id);
-             */
-            db.beginTransaction()
-            val cv = ContentValues()
-            cv.put("is_favorited", "False")
-            db.endTransaction()
-            // or cv.put("is_favorited", "0")
-            binding.recipeCardFavoriteIcon.setImageResource(R.drawable.ic_baseline_favorite_border_24)
-        } else {
-            db.beginTransaction()
-            val cv = ContentValues()
-            cv.put("is_favorited", "True")
-            db.endTransaction()
-            // or cv.put("is_favorited", "1")
-            binding.recipeCardFavoriteIcon.setImageResource(R.drawable.ic_baseline_favorite_24)
-        }
-         */
         return recipePosts
     }
 
