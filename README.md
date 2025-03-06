@@ -2,7 +2,7 @@
 ## Project Description
 I will build an application which fetches content using a recipe API and displays it to the user to select. The application displays the content depending on user choices on cuisine, allergies, and type of meat. The user will also have access to a favorite recipe list and a todo list. 
 	The purpose of the application is to serve users who want to cook dishes of different cuisines, but also gives them the ability to choose constraints on the recipes. Once the user has made some of the recipes, the user should have the ability to make a personal cookbook from the recipes made.
-	The application will have an API layer, a view model which handles live data such as user criteria selection, a recycler view which handles the recipe lists, activities for general application elements, and a database to store user data. Major challenges will be making an activity tree and fragments on them and creating the database, because previous homeworks and flipped classrooms have not gone over these concepts yet.
+	The application will have an API layer, a view model which handles live data such as user criteria selection, a recycler view which handles the recipe lists, activities for general application elements, and a database to store user data.
 Interface
                                  
 ### API
